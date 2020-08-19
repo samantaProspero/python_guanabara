@@ -73,35 +73,42 @@ for e in brasil:
 # Desafios:
 # 090: Faça um programa que leia nome e média de um aluno, guardando também a situação em um dicionário.
 # No final, mostre o conteúdo da estrutura na tela.
-aluno = dict()
+"""aluno = dict()
 aluno['nome'] = input('Nome: ')
-aluno['media'] = float(input(f'Média de {aluno}:  '))
+aluno['media'] = float(input(f'Média de {aluno["nome"]}:  '))
 print(aluno['media'])
-if aluno['media'] >= 6.0:
+if aluno['media'] >= 7.0:
+    aluno['situacao'] = 'Aprovado'
+
+elif 5 <= aluno['media'] < 7:
     aluno['situacao'] = 'Aprovado'
 else:
-    aluno['situacao'] = 'Aprovado'
-print(f'Nome é igual a: {aluno['nome']}')
-print(f'Média é igual a: {aluno['media']}')
-print(f'Situação é igual a: {aluno['situacao']}')
-
+    aluno['situacao'] = 'Reprovado'
+print(f'Nome é igual a: {aluno["nome"]}')
+print(f'Média é igual a: {aluno["media"]}')
+print(f'Situação é igual a: {aluno["situacao"]}')
+"""
 # 091: Crie um programa onde 4 jogadores joguem um dado e tenham resultados aleatórios.
 # Guarde esses resultados em um dicionário em Python.
 # No final, coloque esse dicionário em ordem, sabendo que o vencedor tirou o maior número no dado.
 
 """from random import randint
 from time import sleep
+from operator import itemgetter
 
-jogadas = {'jogador1': randint(1, 7), 'jogador2': randint(1, 7), 'jogador3': randint(1, 7), 'jogador4': randint(1, 7)}
+jogadas = {'jogador1': randint(1, 6), 'jogador2': randint(1, 6), 'jogador3': randint(1, 6), 'jogador4': randint(1, 6)}
+rancking = list()
 print('Valores sorteados:')
-for k, v in jogadas:
+for k, v in jogadas.items():
     print(f'O {k} tirou {v}.')
     sleep(1)
 print('Ranking dos jogadores: ')
-for
-print(jogadas)"""
-
-# 092: Crie um programa que leia nome, ano de nascimento e carteira de trabalho e cadastre-o (com idade) em um dicionário.
+rancking = sorted(jogadas.items(), key=itemgetter(1), reverse=True)
+for i, v in enumerate(rancking):
+    print(f'{i+1}º lugar: {v[0]} com {v[1]}')
+    sleep(1)
+"""
+# 092:Crie um programa que leia nome, ano de nascimento e carteira de trabalho e cadastre-o(com idade) em um dicionário
 # Se por acaso a CTPS for diferente de ZERO, o dicionário receberá também o ano de contratação e o salário.
 # Calcule e acrescente, além da idade, com quantos anos a pessoa vai se aposentar.
 
