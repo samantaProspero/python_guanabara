@@ -142,3 +142,4 @@ print('=' * 18)
 print(f'Serão {count} notas:\n{cinquenta} de R$50,00,\n{vinte} de R$ 20,00,\n{dez} de R$ 10,00,\n{um} de R$ 1,00.')
 print('=' * 18)"""
 
+print(9**2 == 80+1)
